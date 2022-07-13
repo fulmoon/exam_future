@@ -1,3 +1,4 @@
+import 'package:exam_future/exam_1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -41,35 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-                            return Scaffold(
-      appBar: AppBar(
-                        title: Text(widget.title),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch:  Colors.blue,
       ),
-      body: Center(
-                        child: Column(
-                                                                                                                                                      mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          print('시작');
-          exam1();
-        },
-        child: const Icon(Icons.add),
-      ),     );
+      home: const FutureExam(),
+    );
   }
   Future<void> exam1() async {
     var delay = Future.delayed(Duration(seconds: 3));
     delay.then((value) => print('Hello'));
   }
-  Future<void> exam1_2()
 }
