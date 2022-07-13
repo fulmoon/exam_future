@@ -12,7 +12,8 @@ class FutureExam extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-
+            var delay = Future.delayed(Duration(seconds: 3));
+            delay.then((value) => print('Hello'));
           },
           child: const Text('연습 1'),
         ),
