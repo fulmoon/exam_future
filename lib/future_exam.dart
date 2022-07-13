@@ -20,4 +20,10 @@ class FutureExam extends StatelessWidget {
       )
     );
   }
+
+  Future exam1() async{
+    await Future.delayed(const Duration(seconds: 3));
+
+    print('World!');
+  }
 }
