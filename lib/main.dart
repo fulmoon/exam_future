@@ -1,4 +1,4 @@
-import 'package:exam_future/exam_1.dart';
+import 'package:exam_future/future_exam.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,13 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-                                    _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -12,8 +12,9 @@ class FutureExam extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-            var delay = Future.delayed(Duration(seconds: 3));
-            delay.then((value) => print('Hello'));
+            print('Hello~');
+            exam1_2().then((value) => print(value));
+
           },
           child: const Text('연습 1'),
         ),
@@ -21,9 +22,17 @@ class FutureExam extends StatelessWidget {
     );
   }
 
-  Future exam1() async{
+  Future exam1_1() async{
     await Future.delayed(const Duration(seconds: 3));
 
     print('World!');
+  }
+
+  Future<String> exam1_2() async{
+    await Future.delayed(const Duration(seconds: 3));
+
+    var data = await Future.value('world');
+
+    return data;
   }
 }
