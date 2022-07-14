@@ -42,39 +42,38 @@ class FutureExam extends StatelessWidget {
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: () async {
+                onPressed: () {
                   print('다운로드 시작!');
-
-                  await Future.delayed(const Duration(seconds: 1))
-                      .then((value) {
-                    print('초기화 중...');
-                  });
-
-                  await Future.delayed(const Duration(seconds: 1))
-                      .then((value) {
-                    print('핵심 파일 로드 중...');
-                  });
-
-                  await Future.delayed(const Duration(seconds: 3))
-                      .then((value) {
-                    print('다운로드 완료!');
-                  });
+                  exam3();
                 },
                 child: const Text('연습 3'),
               ),
             ],
-        ),
-      )
-    );
+          ),
+        ));
   }
 
-  Future exam2_1() async{
+  Future exam3() async {
+    await Future.delayed(const Duration(seconds: 1)).then((value) {
+      print('초기화 중...');
+    });
+
+    await Future.delayed(const Duration(seconds: 1)).then((value) {
+      print('핵심 파일 로드 중...');
+    });
+
+    await Future.delayed(const Duration(seconds: 3)).then((value) {
+      print('다운로드 완료!');
+    });
+  }
+
+  Future exam2_1() async {
     await Future.delayed(const Duration(seconds: 1));
 
     print('World!');
   }
 
-  Future<String> exam1_2() async{
+  Future<String> exam1_2() async {
     await Future.delayed(const Duration(seconds: 3));
 
     var data = await Future.value('world');
