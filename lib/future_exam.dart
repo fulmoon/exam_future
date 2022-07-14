@@ -11,9 +11,10 @@ class FutureExam extends StatelessWidget {
       ), //AppBar
       body: Center(
         child: ElevatedButton(
-          onPressed: (){
+          onPressed: () async{
             print('Hello~');
-            exam1_2().then((value) => print(value));
+            String result = await exam1_3();
+            print(result);
 
           },
           child: const Text('연습 1'),
@@ -34,5 +35,11 @@ class FutureExam extends StatelessWidget {
     var data = await Future.value('world');
 
     return data;
+  }
+
+  Future<String> exam1_3() async{
+    await Future.delayed(const Duration(seconds: 3));
+    return('world');
+
   }
 }
