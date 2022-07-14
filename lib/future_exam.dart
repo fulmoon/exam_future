@@ -42,7 +42,7 @@ class FutureExam extends StatelessWidget {
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: () => exam3(),
+                onPressed: exam3,
                 child: const Text('연습 3'),
               ),
             ],
