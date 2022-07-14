@@ -66,9 +66,16 @@ class _CounterAppState extends State<CounterApp> {
         title: const Text('카운터'),
       ), //AppBar
       body: Center(
-        child: Text(
-          '$count',
-          style: const TextStyle(fontSize: 80),
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              count++;
+            });
+          },
+          child: Text(
+            '$count',
+            style: const TextStyle(fontSize: 80),
+          ),
         ),
       ),
     );
