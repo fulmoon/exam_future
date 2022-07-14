@@ -1,4 +1,3 @@
-import 'package:exam_future/future_exam.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,13 +37,40 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch:  Colors.blue,
+        primarySwatch: Colors.blue,
       ),
-      home: const FutureExam(),
+      home: const CounterApp(),
     );
   }
+
   Future<void> exam1() async {
     var delay = Future.delayed(Duration(seconds: 3));
     delay.then((value) => print('Hello'));
+  }
+}
+
+class CounterApp extends StatefulWidget {
+  const CounterApp({Key? key}) : super(key: key);
+
+  @override
+  State<CounterApp> createState() => _CounterAppState();
+}
+
+class _CounterAppState extends State<CounterApp> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('카운터'),
+      ), //AppBar
+      body: Center(
+        child: Text(
+          '$count',
+          style: const TextStyle(fontSize: 80),
+        ),
+      ),
+    );
   }
 }

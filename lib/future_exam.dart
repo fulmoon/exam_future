@@ -63,6 +63,19 @@ class FutureExam extends StatelessWidget {
         ));
   }
 
+  Future exam4() async {
+    print('5');
+    await Future.delayed(Duration(seconds: 1));
+    print('4');
+    await Future.delayed(Duration(seconds: 1));
+    print('3');
+    await Future.delayed(Duration(seconds: 1));
+    print('2');
+    await Future.delayed(Duration(seconds: 1));
+    print('1');
+    await Future.delayed(Duration(seconds: 1));
+  }
+
   Future exam3() async {
     print('다운로드 시작!');
 
