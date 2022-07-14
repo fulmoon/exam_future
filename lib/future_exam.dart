@@ -26,18 +26,14 @@ class FutureExam extends StatelessWidget {
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   print('Hello~');
-
-                  Future.delayed(const Duration(seconds: 1)).then((value) {
-                    print('World!');
-                    Future.delayed(const Duration(seconds: 1)).then((value) {
+                  for (int i = 0; i < 3; i++) {
+                    await Future.delayed(const Duration(seconds: 1))
+                        .then((value) {
                       print('World!');
-                      Future.delayed(const Duration(seconds: 1)).then((value) {
-                        print('World!');
-                      });
                     });
-                  });
+                  }
                 },
               child: const Text('연습 2'),
             ),
