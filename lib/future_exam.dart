@@ -10,21 +10,40 @@ class FutureExam extends StatelessWidget {
         title: const Text('Future 연습'),
       ), //AppBar
       body: Center(
-        child: ElevatedButton(
-          onPressed: () async{
-            print('Hello~');
-            String result = await exam1_3();
-            print(result);
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () async{
+                print('Hello~');
+                String result = await exam1_3();
+                print(result);
 
-          },
-          child: const Text('연습 1'),
+              },
+              child: const Text('연습 1'),
+            ),
+            ElevatedButton(
+              onPressed: () async{
+                print('Hello~');
+
+                await Future.delayed(const Duration(seconds: 1));
+                print('World!');
+                await Future.delayed(const Duration(seconds: 1));
+                print('World!');
+                await Future.delayed(const Duration(seconds: 1));
+                print('World!');
+
+              },
+              child: const Text('연습 2'),
+            ),
+          ],
         ),
       )
     );
   }
 
-  Future exam1_1() async{
-    await Future.delayed(const Duration(seconds: 3));
+  Future exam2_1() async{
+    await Future.delayed(const Duration(seconds: 1));
 
     print('World!');
   }
@@ -42,4 +61,11 @@ class FutureExam extends StatelessWidget {
     return('world');
 
   }
+
+  Future exam1_1() async{
+    await Future.delayed(const Duration(seconds: 3));
+
+    print('World!');
+  }
+
 }
