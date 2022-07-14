@@ -6,13 +6,13 @@ class FutureExam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Future 연습'),
-      ), //AppBar
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+        appBar: AppBar(
+          title: const Text('Future 연습'),
+        ), //AppBar
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
               ElevatedButton(
                 onPressed: () async {
                   print('Hello~');
@@ -44,6 +44,19 @@ class FutureExam extends StatelessWidget {
               ElevatedButton(
                 onPressed: exam3,
                 child: const Text('연습 3'),
+              ),
+              const SizedBox(
+                width: 200,
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  for (int i = 5; i > 0; i--) {
+                    await Future.delayed(Duration(seconds: 1))
+                        .then((value) => print(i));
+                  }
+                },
+                child: const Text('연습 4'),
               ),
             ],
           ),
@@ -80,16 +93,14 @@ class FutureExam extends StatelessWidget {
     return data;
   }
 
-  Future<String> exam1_3() async{
+  Future<String> exam1_3() async {
     await Future.delayed(const Duration(seconds: 3));
-    return('world');
-
+    return ('world');
   }
 
-  Future exam1_1() async{
+  Future exam1_1() async {
     await Future.delayed(const Duration(seconds: 3));
 
     print('World!');
   }
-
 }
