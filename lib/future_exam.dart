@@ -43,7 +43,6 @@ class FutureExam extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  print('다운로드 시작!');
                   exam3();
                 },
                 child: const Text('연습 3'),
@@ -54,6 +53,8 @@ class FutureExam extends StatelessWidget {
   }
 
   Future exam3() async {
+    print('다운로드 시작!');
+
     await Future.delayed(const Duration(seconds: 1)).then((value) {
       print('초기화 중...');
     });
