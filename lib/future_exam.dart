@@ -13,27 +13,32 @@ class FutureExam extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () async{
-                print('Hello~');
-                String result = await exam1_3();
-                print(result);
+              ElevatedButton(
+                onPressed: () async {
+                  print('Hello~');
+                  String result = await exam1_3();
+                  print(result);
+                },
+                child: const Text('연습 1'),
+              ),
+              const SizedBox(
+                width: 200,
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  print('Hello~');
 
-              },
-              child: const Text('연습 1'),
-            ),
-            ElevatedButton(
-              onPressed: () async{
-                print('Hello~');
-
-                await Future.delayed(const Duration(seconds: 1));
-                print('World!');
-                await Future.delayed(const Duration(seconds: 1));
-                print('World!');
-                await Future.delayed(const Duration(seconds: 1));
-                print('World!');
-
-              },
+                  Future.delayed(const Duration(seconds: 1)).then((value) {
+                    print('World!');
+                    Future.delayed(const Duration(seconds: 1)).then((value) {
+                      print('World!');
+                      Future.delayed(const Duration(seconds: 1)).then((value) {
+                        print('World!');
+                      });
+                    });
+                  });
+                },
               child: const Text('연습 2'),
             ),
           ],
